@@ -1,2 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <style type="text/css">
+    *{
+    padding:auto;
+    margin:auto;
+    text-align:center;
+    justify-content: center;
+    background-color: black;
+    color: yellow;
+    }
+  </style>
+  <h1>Welcome to Supercoders</h1>
+  <%# <img src="/images/home/home-logo.jpg" alt="image"> %>
+  <%# <%= image_tag ("home-logo.png") %>
+  <%= image_tag "home-logo.jpg", height: 300 %>
+
+  <p>This website will let you find your next great software engineer to develop your project! </p>
+
+
+  <button>Browse coders!</button>
+  <button>Login</button>
+</div>
