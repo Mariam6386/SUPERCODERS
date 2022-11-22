@@ -1,1 +1,7 @@
-<h1>This is the new job view</h1>
+<h1>Job Offer</h1>
+<%= simple_form_for([@dev, @job]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :completed %>
+  <%= f.submit "Send Job offer", class: "btn btn-primary" %>
+<% end %>
