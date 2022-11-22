@@ -1,4 +1,4 @@
-<div class="container inline-block">
+<div class="container">
 
 <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"
 <hr>
@@ -9,6 +9,6 @@
 <p><strong>Description:</strong> <%= @dev.description %></p>
 <h2><strong>Price:</strong> <%= @dev.price %>$/hr</h2>
 
-<button type="button" class="btn btn-primary">Book now</button>
+<%= link_to "Book now" %>
 <%= link_to "Go back to all devs", devs_path %>
 </div>
