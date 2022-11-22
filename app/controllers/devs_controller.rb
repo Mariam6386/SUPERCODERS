@@ -1,10 +1,10 @@
 class DevsController < ApplicationController
 
   def show
-    @dev = Dev.find(dev_params)
+    @dev = Dev.find(params[:id])
   end
 
-  def dev_params
-    params.require(:dev).permit(:id)
-  end
+  # def dev_params
+  #   params.require(:dev).permit(:id)
+  # end
 end
