@@ -21,3 +21,4 @@ oscar  = { name: "Oscar", github_link: "https://github.com/oscar007", skills: "2
   puts "Created #{supercoder.name}"
 end
 puts "finished"
+
