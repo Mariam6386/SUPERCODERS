@@ -1,22 +1,27 @@
-<div class="container">
   <style type="text/css">
     *{
     padding:auto;
     margin:auto;
     text-align:center;
     justify-content: center;
-    background-color: black;
-    color: yellow;
     }
   </style>
+<div class="container">
   <h1>Welcome to Supercoders</h1>
   <%# <img src="/images/home/home-logo.jpg" alt="image"> %>
   <%# <%= image_tag ("home-logo.png") %>
   <%= image_tag "home-logo.jpg", height: 300 %>
 
-  <p>This website will let you find your next great software engineer to develop your project! </p>
+  <p>We will help you  find your next great software engineer to develop your project! </p>
 
 
-  <button>Browse coders!</button>
+  <%# <a href="#" class="button-primary">Browse coders!</a> %>
+  <%= link_to "Browse coders!", devs_path, class:"button-primary" %>
   <button>Login</button>
+
+
+  <i class="fa-brands fa-font-awesome"></i>
+  <i class="fa-solid fa-user-secret"></i>
+  <i class="fa-regular fa-bell"></i>
+
 </div>
