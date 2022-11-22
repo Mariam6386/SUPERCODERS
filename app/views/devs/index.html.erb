@@ -1,17 +1,3 @@
-<table class="table table-hover">
-
-<thead class="thead-dark">
-</thead>
-
-<tbody>
-  <ul>
-    <% @devs.each do |dev| %>
-      <li><%= dev.name %></li>
-      <li><%= dev.github_link %></li>
-      <li><%= dev.description %></li>
-      <li><%= dev.price %></li>
-      <li><%= dev.skills%></li>
-    <% end %>
-  </ul>
-</tbody>
-</table>
+<% @devs.each do |dev| %>
+  <%= render partial: "dev-card", locals: { dev: dev } %>
+<% end %>
