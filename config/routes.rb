@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "devs/new", to: "devs#new"
+  post "devs", to: "devs#create"
 
-  resources :devs, only: [:index, :show] do
+  resources :devs, only: [:index, :show, :new, :create] do
     resources :jobs, only: [:new, :create]
   end
 
