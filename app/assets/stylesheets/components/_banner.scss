@@ -1,0 +1,6 @@
+.banner {
+  @include box-shadow(rgba(0, 0, 0, 0.30) 0 4px 10px 0);
+  // background: url("banner.png");
+  // height: 650px;
+  // background-size: cover;
+}

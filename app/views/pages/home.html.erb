@@ -1,22 +1,16 @@
-<div class="container">
-  <%# <style type="text/css">
-    *{
-    padding:auto;
-    margin:auto;
-    text-align:center;
-    justify-content: center;
-    background-color: black;
-    color: yellow;
-    }
-  </style> %>
-  <h1>Welcome to Supercoders</h1>
-  <%# <img src="/images/home/home-logo.jpg" alt="image"> %>
-  <%# <%= image_tag ("home-logo.png") %>
-  <%= image_tag "home-logo.jpg", height: 300 %>
+<div class="header-container">
 
-  <p>This website will let you find your next great software engineer to develop your project! </p>
+  <h1><strong>Welcome to Supercoders</strong></h1>
+
+  <%# <%= image_tag "logo.png", height: 300 %>
+  <%# <%= image_tag "banner.png", height: 300 %>
+  <div class="banner">
+    <%= image_tag "banner.png", height: 600 %>
+  </div>
+  <br>
+  <p>Find your next great software engineer! </p>
 
 
-  <button>Browse coders!</button>
-  <button>Login</button>
+  <button class="btn-flat">Browse coders!</button>
+  <button class="btn-flat">Login</button>
 </div>
