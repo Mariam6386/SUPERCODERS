@@ -11,5 +11,7 @@
 
   <%= f.input :skills, placeholder: "Ruby, JS, Python, ..." %>
 
-  <%= f.submit %>
+  <%= link_to "Submit", dev_jobs_path(@dev), class: "btn-flat"%>
+
+  <%# <%= f.submit %>
 <% end %>
