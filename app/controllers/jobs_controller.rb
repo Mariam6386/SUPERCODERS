@@ -14,9 +14,17 @@ class JobsController < ApplicationController
     redirect_to dev_path
   end
 
+  def show
+    @job = Job.find(params[:id])
+  end
+
+  def index
+    @jobs = Job.all
+  end
+
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :id)
   end
 end
