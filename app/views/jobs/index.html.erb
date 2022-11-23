@@ -1,14 +1,13 @@
-<h1>index jobs</h1>
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
+<div class="container">
+  <h1>Job offers</h1>
+  <div class="cards">
+    <% @jobs.each do |job| %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h3><%= job.title %></h3>
+          <p class= "text"><%= job.description %></p>
+        </div>
+        </div>
+    <% end %>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
-</div>
