@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Job offers</h1>
+  <div class="cards">
+    <% @jobs.each do |job| %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h3><%= job.title %></h3>
+          <p class= "text"><%= job.description %></p>
+        </div>
+      </div>
+    <% end %>
+</div>

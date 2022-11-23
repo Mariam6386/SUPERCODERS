@@ -14,6 +14,10 @@ class JobsController < ApplicationController
     redirect_to dev_path
   end
 
+  def index
+    @jobs = Job.all
+  end
+
   private
 
   def job_params
