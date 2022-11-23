@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   post "devs", to: "devs#create"
 
   resources :devs, only: [:index, :show, :new, :create] do
-    resources :jobs, only: [:new, :create, :index]
+  resources :jobs, only: [:new, :create, :show, :index]
   end
-
 end

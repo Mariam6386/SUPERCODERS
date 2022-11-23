@@ -50,6 +50,7 @@
   padding: 16px;
 }
 
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -137,4 +138,14 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.fa-brands {
+  color: #ff66c4;
+  font-size: 14px;
+}
+
+.fa-github {
+  color: #ff66c4;
+  font-size: 16px;
 }
