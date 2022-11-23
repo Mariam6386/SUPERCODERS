@@ -1,4 +1,5 @@
-<h1>Create a new dev here</h1>
+<div class="container">
+<h1>Become a Supercoder</h1>
 
 <%= simple_form_for [@dev] do |f|  %>
   <%= f.input :name, placeholder: "Please enter your name" %>
@@ -7,9 +8,11 @@
 
   <%= f.input :description, placeholder: "A short description about yourself" %>
 
-  <%= f.input :price, placeholder: "Whats your hourly wage?" %>
+  <%= f.input :price, label: "Rate($)" , placeholder: "Whats your hourly wage?" %>
 
   <%= f.input :skills, placeholder: "Ruby, JS, Python, ..." %>
 
+  <%= link_to "Book now" %>
   <%= f.submit %>
 <% end %>
+</div>
