@@ -3,6 +3,6 @@
 <%= simple_form_for([@dev, @job]) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= link_to "Send Job offer", dev_jobs_path(@dev), class: "btn-flat"%>
+  <%= f.submit "Send Job offer", class: "btn-flat"%>
 <% end %>
 </div>

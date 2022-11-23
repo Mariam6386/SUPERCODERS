@@ -11,7 +11,7 @@ class JobsController < ApplicationController
     @job.user = current_user
     @job.dev = @dev
     @job.save!
-    redirect_to dev_path
+    redirect_to dev_jobs_path(@dev)
   end
 
   def show
@@ -19,7 +19,7 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all
+    @jobs = current_user.jobs
   end
 
   private
