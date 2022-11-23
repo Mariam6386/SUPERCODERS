@@ -1,0 +1,7 @@
+<div class="grid-container">
+  <div class="card-grid">
+    <% @devs.each do |dev| %>
+      <%= render partial: "dev-card", locals: { dev: dev } %>
+    <% end %>
+  </div>
+</div>
