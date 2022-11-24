@@ -11,12 +11,20 @@ class JobsController < ApplicationController
     @job.user = current_user
     @job.dev = @dev
     @job.save!
-    redirect_to dev_path
+    redirect_to jobs_path
+  end
+
+  def show
+    @job = Job.find(params[:id])
+  end
+
+  def index
+    @jobs = current_user.jobs
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :id)
   end
 end

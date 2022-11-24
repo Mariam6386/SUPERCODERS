@@ -1,15 +1,16 @@
-<h1>Create a new dev here</h1>
+<div class=container>
+<div class="header-container">
+  <h1 class="header-h1">Become a Supercoder <i class="fa-solid fa-mask"></i></h1>
+</div>
+<div class="new-form-container">
+  <%= simple_form_for [@dev] do |f|  %>
+    <%= f.input :name, placeholder: "Please enter your name" %>
+    <%= f.input :github_link, placeholder: "Please enter your Gihub link" %>
+    <%= f.input :description, placeholder: "A short description about yourself" %>
+    <%= f.input :price, label: "Rate($)" , placeholder: "Whats your hourly wage?" %>
+    <%= f.input :skills, placeholder: "Ruby, JS, Python, ..." %>
 
-<%= simple_form_for [@dev] do |f|  %>
-  <%= f.input :name, placeholder: "Please enter your name" %>
-
-  <%= f.input :github_link, placeholder: "Please enter your Gihub link" %>
-
-  <%= f.input :description, placeholder: "A short description about yourself" %>
-
-  <%= f.input :price, placeholder: "Whats your hourly wage?" %>
-
-  <%= f.input :skills, placeholder: "Ruby, JS, Python, ..." %>
-
-  <%= f.submit %>
-<% end %>
+    <%= f.submit class: "btn-flat" %>
+  <% end %>
+  </div>
+</div>

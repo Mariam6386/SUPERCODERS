@@ -1,7 +1,8 @@
+<div class="container">
 <h1>Job Offer</h1>
 <%= simple_form_for([@dev, @job]) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :completed %>
-  <%= f.submit "Send Job offer", class: "btn btn-primary" %>
+  <%= f.submit "Send Job offer", class: "btn-flat"%>
 <% end %>
+</div>

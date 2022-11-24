@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get "devs/new", to: "devs#new"
   post "devs", to: "devs#create"
 
+  resources :jobs, only: [:index]
   resources :devs, only: [:index, :show, :new, :create] do
-    resources :jobs, only: [:new, :create]
+    resources :jobs, only: [:new, :create, :show]
   end
-
 end
