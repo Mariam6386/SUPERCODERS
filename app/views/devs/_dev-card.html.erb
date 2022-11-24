@@ -3,11 +3,11 @@
     <img src="https://pbs.twimg.com/media/EhPPMELX0AADWNK.jpg" />
   <% end %>
   <div class="card-dev-infos">
-    <h2><%= link_to dev_path(dev) do %> 
-      <%= dev.name %> <%= dev.price %> $/hr</h2>
+    <h2><%= link_to dev_path(dev) do %>
+      <%= dev.name %> $<%= dev.price %>/h</h2>
     <% end %>
     <h3><%= dev.description%></h3>
     <p>Experience: <%= dev.skills%></p>
-    <a href="<%= dev.github_link %>"><i class="fa-brands fa-github"></i> Github</a>
+    <a href="<%= dev.github_link %>"><i class="fa-brands fa-github"></i> gitHub</a>
   </div>
 </div>
