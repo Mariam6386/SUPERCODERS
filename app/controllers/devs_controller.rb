@@ -1,6 +1,11 @@
 class DevsController < ApplicationController
   def index
-    @devs = Dev.all
+    if params[:query].present?
+      sql_query = "description ILIKE :query OR skills ILIKE :query"
+      @devs = Dev.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @devs = Dev.all
+    end
   end
 
   def show
