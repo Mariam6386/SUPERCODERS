@@ -1,6 +1,9 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Review.destroy_all
+Job.destroy_all
+User.destroy_all
 Dev.destroy_all
 
 puts "Creating supercoders..."
@@ -55,4 +58,3 @@ oscar.photo.attach(io: file, filename:"photo.png", content_type: "image/png")
 oscar.save!
 
 puts "finished"
-
