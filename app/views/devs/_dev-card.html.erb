@@ -1,6 +1,6 @@
 <div class="card-dev">
   <%= link_to dev_path(dev) do %>
-    <img src="https://pbs.twimg.com/media/EhPPMELX0AADWNK.jpg" />
+    <%= cl_image_tag dev.photo.key, width: 250, height: 250, crop: :fill %>
   <% end %>
   <div class="card-dev-infos">
     <h2><%= link_to dev_path(dev) do %> 
