@@ -2,7 +2,18 @@
   <h1 class="header-h1"><i class="fa-solid fa-mask"></i> <strong>Choose your Supercoder</strong> <i class="fa-solid fa-mask"></i></h1>
 </div>
 
-<div class="grid-container">
+<div class="container">
+  <%= form_with url: devs_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control p-3 bg-light text-dark",
+        placeholder: "Find your supercoder"
+      %>
+    <%= submit_tag "Search", class: "btn-flat" %>
+  <% end %>
+</div>
+<br>
+<div class="container">
   <div class="card-grid">
     <% @devs.each do |dev| %>
       <%= render partial: "dev-card", locals: { dev: dev } %>
