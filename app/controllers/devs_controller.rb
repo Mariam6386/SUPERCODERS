@@ -25,6 +25,6 @@ class DevsController < ApplicationController
   private
 
   def dev_params
-    params.require(:dev).permit(:name, :github_link, :description, :price, :skills )
+    params.require(:dev).permit(:name, :github_link, :description, :price, :skills, :photo )
   end
 end
