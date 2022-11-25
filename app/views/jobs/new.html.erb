@@ -1,5 +1,6 @@
-<div class="container">
-<h1>Job Offer</h1>
+<div class="header-container">
+  <h1 class="header-h1"><i class="fa-solid fa-mask"></i><strong> Tell <%= @dev.name %> about the job </strong> <i class="fa-solid fa-mask"></i></h1>
+</div>
 <%= simple_form_for([@dev, @job]) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
