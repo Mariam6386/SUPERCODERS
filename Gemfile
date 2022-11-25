@@ -6,7 +6,7 @@ ruby "3.1.2"
 gem "devise"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
-
+gem "faker"
 gem "geocoder"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

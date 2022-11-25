@@ -1,4 +1,5 @@
 require "open-uri"
+require 'faker'
 
 puts "Cleaning database..."
 Review.destroy_all
@@ -61,3 +62,34 @@ celine.save!
 
 
 puts "finished"
+puts "Creating Users"
+
+markus = User.new({ email: "markus@gmail.com", password: "password"})
+markus.save!
+max = User.new({ email: "max@gmail.com", password: "password"})
+max.save!
+damla = User.new({ email: "damla@gmail.com", password: "password"})
+damla.save!
+suzi = User.new({ email: "suzi@gmail.com", password: "password"})
+suzi.save!
+mariam = User.new({ email: "mariam@gmail.com", password: "password"})
+mariam.save!
+chris = User.new({ email: "chris@gmail.com", password: "password"})
+chris.save!
+
+puts "Creating Devs"
+puts "Creating Jobs"
+
+Dev.all.each do |dev|
+  6.times do
+    job = Job.new({ title: Faker::TvShows::SiliconValley.app, description: Faker::TvShows::SiliconValley.quote, completed: 0, user: User.all.sample, dev: dev })
+    job.save!
+  end
+  dev.jobs.each do |job|
+    Review.create({
+    rating: [1..5].sample,
+    comment: Faker::TvShows::MichaelScott.quote,
+    job: job
+    })
+  end
+end
