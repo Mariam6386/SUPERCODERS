@@ -1,6 +1,13 @@
 class DevsController < ApplicationController
   def index
     @devs = Dev.all
+    @markers = @devs.geocoded.map do |dev|
+      {
+        lat: dev.latitude,
+        lng: dev.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {dev: dev})
+      }
+    end
   end
 
   def show
@@ -20,6 +27,6 @@ class DevsController < ApplicationController
   private
 
   def dev_params
-    params.require(:dev).permit(:name, :github_link, :description, :price, :skills )
+    params.require(:dev).permit(:name, :github_link, :description, :price, :skills, :address)
   end
 end
