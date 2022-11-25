@@ -1,0 +1,16 @@
+.pop_up_window {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  max-width: 150px;
+  box-shadow: 100px;
+}
+
+.pop_up_window a {
+  text-decoration: none;
+  color: black;
+  border: none;
+}
+
+.pop_up_window a:active {
+  border: none;
+}

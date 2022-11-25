@@ -1,0 +1,14 @@
+.main-container {
+  display: flex;
+}
+.map {
+  width: 800px;
+  height: 100vh;
+  margin-left: 16px;
+}
+
+#map2 {
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
