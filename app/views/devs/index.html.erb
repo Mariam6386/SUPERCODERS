@@ -1,3 +1,4 @@
+<div class="container">
 <div class="header-container">
   <h1 class="header-h1"><i class="fa-solid fa-mask"></i> <strong>Choose your Supercoder</strong> <i class="fa-solid fa-mask"></i></h1>
 </div>
@@ -11,13 +12,7 @@
   <% end %>
 </div>
 <br>
-<div class="container">
-  <div class="card-grid">
-    <% @devs.each do |dev| %>
-      <%= render partial: "dev-card", locals: { dev: dev } %>
-    <% end %>
-
-<div class="container">
+  <div class="container">
   <div class= "main-container">
     <div class="grid-container">
       <div class="card-grid">
@@ -30,6 +25,8 @@
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
     </div>
   </div>
 </div>

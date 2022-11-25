@@ -1,6 +1,11 @@
 class DevsController < ApplicationController
   def index
-    @devs = Dev.all
+    if params[:query].present?
+      sql_query = "description ILIKE :query OR skills ILIKE :query OR address ILIKE :query"
+      @devs = Dev.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @devs = Dev.all
+    end
     @markers = @devs.geocoded.map do |dev|
       {
         lat: dev.latitude,
@@ -8,12 +13,7 @@ class DevsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {dev: dev})
       }
     end
-    if params[:query].present?
-      sql_query = "description ILIKE :query OR skills ILIKE :query"
-      @devs = Dev.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @devs = Dev.all
-    end
+
   end
 
   def show
