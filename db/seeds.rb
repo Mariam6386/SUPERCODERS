@@ -30,7 +30,7 @@ naomi = Dev.new({ name: "Naomi", github_link: "https://github.com/naomicampbell"
 naomi.photo.attach(io: file, filename:"photo.png", content_type: "image/png")
 naomi.save!
 file = URI.open("https://res.cloudinary.com/dexz33xuy/image/upload/v1669288422/1_xzuuvx.jpg")
-steve = Dev.new({ name: "Steve (they/them)", github_link: "https://github.com/steveo", skills: "7 years", description: "Ruby, PHP, Laravel", price: "80$/h", address: "Ehrenstraße 70, Cologne" })
+steve = Dev.new({ name: "Steve", github_link: "https://github.com/steveo", skills: "7 years", description: "Ruby, PHP, Laravel", price: "80$/h", address: "Ehrenstraße 70, Cologne" })
 steve.photo.attach(io: file, filename:"photo.png", content_type: "image/png")
 steve.save!
 file = URI.open("https://res.cloudinary.com/dexz33xuy/image/upload/v1669288422/4_dqbteb.jpg")
@@ -50,7 +50,7 @@ claudia = Dev.new({ name: "Claudia", github_link: "https://github.com/claudiasch
 claudia.photo.attach(io: file, filename:"photo.png", content_type: "image/png")
 claudia.save!
 file = URI.open("https://res.cloudinary.com/dexz33xuy/image/upload/v1669288423/9_izifwr.jpg")
-karen = Dev.new({ name: "Karen (she/her)", github_link: "https://github.com/ragekaren", skills: "8 years", description: "JavaScript, Ruby, JavaScript, Python", price: "85$/h", address: "London SW1A 0AA, Vereinigtes Königreich" })
+karen = Dev.new({ name: "Karen", github_link: "https://github.com/ragekaren", skills: "8 years", description: "JavaScript, Ruby, JavaScript, Python", price: "85$/h", address: "London SW1A 0AA, Vereinigtes Königreich" })
 karen.photo.attach(io: file, filename:"photo.png", content_type: "image/png")
 karen.save!
 file = URI.open("https://res.cloudinary.com/dexz33xuy/image/upload/v1669288423/8_fszaam.jpg")
