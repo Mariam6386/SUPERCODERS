@@ -1,6 +1,8 @@
-<div class="container">
-<h1>Job offer for <%= @job.dev.name %></h1>
-<p><strong>Title: </strong> <%= @job.title %></p>
-<p><strong>Description: </strong> <%= @job.description %></p>
-<p><strong>Status: </strong> <%= @job.completed %></p>
+<div class="header-container">
+  <h1 class="header-h1"><i class="fa-solid fa-mask"></i> <strong>Job offer for <%= @job.dev.name %></strong> <i class="fa-solid fa-mask"></i></h1>
+</div>
+<div>
+  <p><strong>Title: </strong> <%= @job.title %></p>
+  <p style="font-color:black"><strong>Description: </strong> <%= @job.description %></p>
+  <p><strong>Status: </strong> <%= @job.completed %></p>
 </div>
