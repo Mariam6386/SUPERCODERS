@@ -1,5 +1,6 @@
-<div class="container">
-<h1>Job Review</h1>
+<div class="header-container">
+  <h1 class="header-h1"><i class="fa-solid fa-mask"></i> <strong>Write a review</strong> <i class="fa-solid fa-mask"></i></h1>
+</div>
 <%= simple_form_for([@job, @review]) do |f| %>
   <%= f.input :rating, input_html: { min: '1', max: '5' } %>
   <%= f.input :comment %>
