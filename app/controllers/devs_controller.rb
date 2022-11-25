@@ -1,5 +1,12 @@
 class DevsController < ApplicationController
   def index
+    @devs = Dev.all
+    @markers = @devs.geocoded.map do |dev|
+      {
+        lat: dev.latitude,
+        lng: dev.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {dev: dev})
+      }
     if params[:query].present?
       sql_query = "description ILIKE :query OR skills ILIKE :query"
       @devs = Dev.where(sql_query, query: "%#{params[:query]}%")
@@ -25,6 +32,6 @@ class DevsController < ApplicationController
   private
 
   def dev_params
-    params.require(:dev).permit(:name, :github_link, :description, :price, :skills, :photo )
+    params.require(:dev).permit(:name, :github_link, :description, :price, :skills, :address, :photo)
   end
 end

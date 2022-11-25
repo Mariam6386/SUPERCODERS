@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   def new
+    @job = Job.find(params[:job_id])
     @review = Review.new
   end
 
@@ -8,9 +9,16 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.job = @job
     @review.save!
-    redirect_to dev_path(@review)
+    redirect_to root_path
   end
 
+  # def show
+  #   @review = Review.new
+  # end
+
+  def index
+    @reviews = current_user.reviews
+  end
 
   private
 

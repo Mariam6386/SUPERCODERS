@@ -1,9 +1,7 @@
 <div class="header-container">
   <h1 class="header-h1"><i class="fa-solid fa-mask"></i> <strong>Choose your Supercoder</strong> <i class="fa-solid fa-mask"></i></h1>
 </div>
-
-<div class="container">
-  <%= form_with url: devs_path, method: :get, class: "d-flex" do %>
+<%= form_with url: devs_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control p-3 bg-light text-dark",
@@ -18,5 +16,20 @@
     <% @devs.each do |dev| %>
       <%= render partial: "dev-card", locals: { dev: dev } %>
     <% end %>
+
+<div class="container">
+  <div class= "main-container">
+    <div class="grid-container">
+      <div class="card-grid">
+        <% @devs.each do |dev| %>
+          <%= render partial: "dev-card", locals: { dev: dev } %>
+        <% end %>
+      </div>
+    </div>
+    <div class="map" id="map2"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>

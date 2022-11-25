@@ -1,11 +1,13 @@
 .header-container {
+  padding: auto;
   margin-bottom: 16px;
   text-shadow: gray;
   text-align: center;
   align-items: center;
-  line-height: normal;
+  // line-height: normal;
   font-size: 18px;
   color: #5e17eb;
+  // padding-bottom: 0;
 }
 
 i {

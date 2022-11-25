@@ -1,14 +1,25 @@
 <div class="container">
+  <%= cl_image_tag @dev.photo.key %>
+  <hr>
+  <h1><%= @dev.name %></h1>
+  <p><strong>Speciality:</strong> <%= @dev.description %></p>
+  <p><strong>gitHub: </strong><%= link_to @dev.github_link %></p>
+  <p><strong>Experience:</strong> <%= @dev.skills %></p>
+  <h2><strong>Rate: </strong> <%= @dev.price %>$/hr</h2>
+  <br>
+  <%= link_to "Book now", new_dev_job_path(@dev), class: "btn-flat"%>
+  <br>
+  <br>
 
-<%= cl_image_tag @dev.photo.key %>
-
-<hr>
-<h1><%= @dev.name %></h1>
-<p><strong></strong> <%= @dev.description %></p>
-<p><strong>gitHub link: </strong><%= @dev.github_link %></p>
-<p><strong>Skills:</strong> <%= @dev.skills %></p>
-<h3><strong>Rate: </strong> <%= @dev.price %>$/hr</h3>
-<br>
-<%= link_to "Book now", new_dev_job_path(@dev), class: "btn-flat"%>
-
+  <h2>Reviews</h2>
+  <div class="cards">
+    <% @dev.reviews.each do |review| %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h3><%= review.rating %></h3>
+          <p class= "text"><%= review.comment %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
