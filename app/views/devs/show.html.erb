@@ -1,26 +1,30 @@
 <div class="header-container">
-  <%= cl_image_tag @dev.photo.key %>
-  <hr>
-  <div style="align-left">
-  <h1 style="color:#ff66c4"><%= @dev.name %></h1>
-  <p style="color:black"><strong>Speciality:</strong> <%= @dev.description %></p>
-  <p style="color:black"><strong>gitHub: </strong><%= link_to @dev.github_link %></p>
-  <p style="color:black"><strong>Experience:</strong> <%= @dev.skills %></p>
-  <h2><strong>Rate: </strong><%= @dev.price %> $/hr</h2>
-  <br>
-  <%= link_to "Book now", new_dev_job_path(@dev), class: "btn-flat"%>
-  <br>
-  <br>
-
-  <h2>Reviews</h2>
-  <div class="cards">
-    <% @dev.reviews.each do |review| %>
-      <div class="card-product">
-        <div class="card-product-infos">
-          <h3><%= review.rating %></h3>
-          <p class= "text"><%= review.comment %></p>
-        </div>
+  <div class="d-flex justify-content-center">
+    <%= cl_image_tag @dev.photo.key, width: 300, height: 300, crop: :fill, class:"me-3 rounded" %>
+    <hr>
+    <div class="text-start">
+      <h1 style="color:#ff66c4"><%= @dev.name %></h1>
+      <p style="color:black"><strong>Speciality:</strong> <%= @dev.description %></p>
+      <p style="color:black"><strong>gitHub: </strong><%= link_to @dev.github_link %></p>
+      <p style="color:black"><strong>Experience:</strong> <%= @dev.skills %></p>
+      <h3><strong>Rate: </strong><%= @dev.price %> $/hr</h3>
+      <br>
+      <%= link_to "Book now", new_dev_job_path(@dev), class: "btn-flat"%>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="mt-3">
+    <h3>Reviews</h3>
+      <div class="cards">
+          <% @dev.reviews.each do |review| %>
+            <div class="card-product">
+              <div class="card-product-infos">
+                <h3><%= review.rating %></h3>
+                <p class= "text"><%= review.comment %></p>
+              </div>
+            </div>
+          <% end %>
       </div>
-    <% end %>
   </div>
 </div>
