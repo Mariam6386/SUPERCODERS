@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/create'
   devise_for :users
   root to: "pages#home"
 
@@ -9,7 +11,13 @@ Rails.application.routes.draw do
   get "devs/new", to: "devs#new"
   post "devs", to: "devs#create"
 
+
+  resources :jobs, only: [:index]
+
   resources :devs, only: [:index, :show, :new, :create] do
-  resources :jobs, only: [:new, :create, :show, :index]
+    resources :jobs, only: [:new, :create, :show]
+  end
+  resources :jobs, only: [] do
+    resources :reviews, only: [:create, :new]
   end
 end

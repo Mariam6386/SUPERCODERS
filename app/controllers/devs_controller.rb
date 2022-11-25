@@ -7,6 +7,11 @@ class DevsController < ApplicationController
         lng: dev.longitude,
         info_window: render_to_string(partial: "info_window", locals: {dev: dev})
       }
+    if params[:query].present?
+      sql_query = "description ILIKE :query OR skills ILIKE :query"
+      @devs = Dev.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @devs = Dev.all
     end
   end
 
@@ -27,6 +32,6 @@ class DevsController < ApplicationController
   private
 
   def dev_params
-    params.require(:dev).permit(:name, :github_link, :description, :price, :skills, :address)
+    params.require(:dev).permit(:name, :github_link, :description, :price, :skills, :address, :photo)
   end
 end
